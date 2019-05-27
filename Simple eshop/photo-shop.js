@@ -1,3 +1,6 @@
+// Helper javascript code for a single page e-shop of pictures taken on a kids swimming course
+// No automation as requested, customer wanted to process the orders by himself
+
 (function($) {
 	'use strict';
 

@@ -1,3 +1,7 @@
+// A simple form to reserve time in branch of a firm
+// It is simple as it has been requested, so no automated disabling of already reserved time
+// just sending a confirmation e-mail to the customer and an informative e-mail to the employee
+
 var myJSON;
 
 function dataReady() {
