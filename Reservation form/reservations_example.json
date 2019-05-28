@@ -1,0 +1,133 @@
+{
+	"prodejny": {
+		"prodejna": [
+			{
+				"id": 1,
+				"name": "ricany",
+				"days": [
+					{
+						"day": "monday",
+						"from": "08:00",
+						"until": "17:00"
+					},
+					{
+						"day": "tuesday",
+						"from": "08:00",
+						"until": "15:00"
+					},
+					{
+						"day": "wednesday",
+						"from": "08:00",
+						"until": "17:00"
+					},
+					{
+						"day": "thursday",
+						"from": "08:00",
+						"until": "15:00"
+					},
+					{
+						"day": "friday",
+						"from": "08:00",
+						"until": "16:00"
+					},
+					{
+						"holidayDate": "1.5.2019",
+						"status": "closed"
+					},
+					{
+						"holidayDate": "8.5.2019",
+						"status": "closed"
+					}
+				]
+			},
+			{
+				"id": 3,
+				"name": "praha-dejvice",
+				"days": [
+					{
+						"day": "monday",
+						"from": "08:30",
+						"until": "17:30"
+					},
+					{
+						"day": "tuesday",
+						"from": "08:30",
+						"until": "17:30"
+					},
+					{
+						"day": "wednesday",
+						"from": "08:30",
+						"until": "17:30"
+					},
+					{
+						"day": "thursday",
+						"from": "08:30",
+						"until": "17:30"
+					},
+					{
+						"day": "friday",
+						"from": "08:30",
+						"until": "17:30"
+					},
+					{
+						"holidayDate": "1.5.2019",
+						"status": "closed"
+					},
+					{
+						"holidayDate": "8.5.2019",
+						"status": "closed"
+					}
+				]
+			},
+			{
+				"id": 13,
+				"name": "vrchlabi",
+				"days": [
+					{
+						"day": "monday",
+						"from": "08:00",
+						"until": "16:00",
+						"pauseStart": "12:00",
+						"pauseEnd": "12:30"
+					},
+					{
+						"day": "tuesday",
+						"from": "08:00",
+						"until": "16:00",
+						"pauseStart": "12:00",
+						"pauseEnd": "12:30"
+					},
+					{
+						"day": "wednesday",
+						"from": "08:00",
+						"until": "16:00",
+						"pauseStart": "12:00",
+						"pauseEnd": "12:30"
+					},
+					{
+						"day": "thursday",
+						"from": "08:00",
+						"until": "16:00",
+						"pauseStart": "12:00",
+						"pauseEnd": "12:30"
+					},
+					{
+						"day": "friday",
+						"from": "08:00",
+						"until": "16:00",
+						"pauseStart": "12:00",
+						"pauseEnd": "12:30"
+					},
+					{
+						"holidayDate": "1.5.2019",
+						"status": "closed"
+					},
+					{
+						"holidayDate": "8.5.2019",
+						"status": "closed"
+					}
+				]
+			}
+		]
+	}
+}
