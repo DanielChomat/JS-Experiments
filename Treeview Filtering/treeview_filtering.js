@@ -6,9 +6,9 @@
 
 $(function() {
 	window.onload = function(e) {
-		doAjax()
-			.then(data => initExpandibleTree2(data))
-			.then(() => getAllNodes());
+		// doAjax()
+		// 	.then(data => initExpandibleTree2(data))
+		// 	.then(() => getAllNodes());
 	};
 
 	function errorHandler(jqXHR, exception) {
@@ -571,7 +571,7 @@ $(function() {
 		var filterOfBIM = $('form').serialize();
 
 		// GET JSON FROM PHP SCRIPT
-		$.ajax({
+		/* $.ajax({
 			type: 'POST',
 			url: 'get-data.php',
 			data: {
@@ -586,6 +586,6 @@ $(function() {
 				var serializedJS = objectifyForm(serializedJQuery);
 			},
 			error: errorHandler
-		});
+		}); */
 	});
 });

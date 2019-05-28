@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+        | OKNA.EU </title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <style type="text/css" id="treeview-expandible-style">
+        .treeview .list-group-item {
+            cursor: pointer
+        }
+
+        .treeview span.indent {
+            margin-left: 10px;
+            margin-right: 10px
+        }
+
+        .treeview span.icon {
+            width: 12px;
+            margin-right: 5px
+        }
+
+        .treeview .node-disabled {
+            color: silver;
+            cursor: not-allowed
+        }
+
+        .node-treeview-expandible {
+            color: #103F8F;
+        }
+
+        .node-treeview-expandible:not(.node-disabled):hover {
+            background-color: #F5F5F5;
+        }
+    </style>
+    <link href="vendor/css/bootstrap-treeview.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" async="" src="vendor/js/bootstrap-treeview.js"></script>
+</head>
+
+<body cz-shortcut-listen="true" <div id="page-layout" class="container">
+
+    <hr class="menu-hr">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="alert alert-success alert-dismissible" id="alertInfoBIM">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                        aria-hidden="true">×</span></button>
+                <h3 class="heading-bim">Vítejte!</h3>
+
+                <blockquote class="tutorial-download">
+                    - <strong>Kompletní balíček</strong> všech našich dostupných prvků stahujte <b>
+                        <a href="" title="Stáhnout kompletní balík prvků (ZIP)">ZDE</a></b>!
+                    <br>
+                    - <strong>Jednotlivé</strong> prvky si můžete stáhnout po zaškrtnutí daného prvku, či profilu a
+                    následném vybrání
+                    možnosti <b><a id="checkedElementsDownloadLink" href=""
+                            title="Stáhnout jen vybrané prvky (ZIP)">STÁHNOUT VYBRANÉ (0)</a></b>.
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;- <strong>Filtrovat</strong> prvky můžeté pomocí našeho podle <b>typu
+                        konstrukce</b>,
+                    <b>počtu křídel</b>, <b>hloubky profilu</b> či <b>rohových sestav</b>.
+                    <br>
+                    - Prvky budou obsažené ve staženém archivu ZIP
+                </blockquote>
+            </div>
+        </div>
+
+
+        <!-- Unordered list with elements and their children, when every element of this list (parent and child) can be checked and it's file downloaded -->
+
+
+        <div class="col-xs-12 col-sm-12 col-md-9 col-lg-8">
+            <div id="treeview-expandible" class="treeview" style="font-size:13px;">
+                <ul class="list-group">
+                    <li style="color:undefined;background-color:undefined;"
+                        class="list-group-item node-treeview-expandible" data-nodeid="0">
+                        <span class="icon expand-icon glyphicon glyphicon-chevron-down"></span><span
+                            class="icon node-icon"></span><span
+                            class="icon check-icon glyphicon glyphicon-unchecked"></span>ELEMENT<span
+                            class="s pull-right hidden-xs">&nbsp;&nbsp;&nbsp;<span class="label label-default">Children:
+                                15</span></span><span class="pull-right hidden-xs">&nbsp;<span
+                                class="label label-warning">77
+                                mm</span></span><span class="pull-right hidden-xs">&nbsp;<span
+                                class="label label-info">hliníkové</span></span><span
+                            class="pull-right hidden-xs">&nbsp;<span class="label label-default">Okno</span></span></li>
+                    <li style="color:undefined;background-color:undefined;"
+                        class="list-group-item node-treeview-expandible" data-nodeid="1"><span
+                            class="indent"></span><span class="icon glyphicon"></span><span
+                            class="icon node-icon"></span><span
+                            class="icon check-icon glyphicon glyphicon-unchecked"></span><span
+                            class="label label-success hidden-sm hidden-md hidden-lg"
+                            style="visibility:hidden;">Roh</span><span class="label label-success hidden-xs"
+                            style="visibility:hidden;">Rohové</span>&nbsp;<span
+                            class="label label-primary hidden-sm hidden-md hidden-lg">1 křídlo</span><span
+                            class="label label-primary hidden-xs">1-křídlé</span><span
+                            class="hidden-xs">&nbsp;okno</span><span class="hidden-sm hidden-md hidden-lg">&nbsp;<i
+                                class="fa fa-arrow-right"></i>&nbsp;</span><span class="hidden-xs">&nbsp;<i
+                                class="fa fa-minus fa-rotate-270"></i>&nbsp;Rozložení křídel: </span><span
+                            class="label label-danger">F</span></li>
+                    <li style="color:undefined;background-color:undefined;"
+                        class="list-group-item node-treeview-expandible" data-nodeid="2"><span
+                            class="indent"></span><span class="icon glyphicon"></span><span
+                            class="icon node-icon"></span><span
+                            class="icon check-icon glyphicon glyphicon-unchecked"></span><span
+                            class="label label-success hidden-sm hidden-md hidden-lg"
+                            style="visibility:hidden;">Roh</span><span class="label label-success hidden-xs"
+                            style="visibility:hidden;">Rohové</span>&nbsp;<span
+                            class="label label-primary hidden-sm hidden-md hidden-lg">1 křídlo</span><span
+                            class="label label-primary hidden-xs">1-křídlé</span><span
+                            class="hidden-xs">&nbsp;okno</span><span class="hidden-sm hidden-md hidden-lg">&nbsp;<i
+                                class="fa fa-arrow-right"></i>&nbsp;</span><span class="hidden-xs">&nbsp;<i
+                                class="fa fa-minus fa-rotate-270"></i>&nbsp;Rozložení křídel: </span><span
+                            class="label label-danger">OS</span></li>
+                    <li style="color:undefined;background-color:undefined;"
+                        class="list-group-item node-treeview-expandible" data-nodeid="3"><span
+                            class="indent"></span><span class="icon glyphicon"></span><span
+                            class="icon node-icon"></span><span
+                            class="icon check-icon glyphicon glyphicon-unchecked"></span><span
+                            class="label label-success hidden-sm hidden-md hidden-lg"
+                            style="visibility:hidden;">Roh</span><span class="label label-success hidden-xs"
+                            style="visibility:hidden;">Rohové</span>&nbsp;<span
+                            class="label label-primary hidden-sm hidden-md hidden-lg">1 křídlo</span><span
+                            class="label label-primary hidden-xs">1-křídlé</span><span
+                            class="hidden-xs">&nbsp;okno</span><span class="hidden-sm hidden-md hidden-lg">&nbsp;<i
+                                class="fa fa-arrow-right"></i>&nbsp;</span><span class="hidden-xs">&nbsp;<i
+                                class="fa fa-minus fa-rotate-270"></i>&nbsp;Rozložení křídel: </span><span
+                            class="label label-danger">S</span></li>
+                    <li style="color:undefined;background-color:undefined;"
+                        class="list-group-item node-treeview-expandible" data-nodeid="4"><span
+                            class="indent"></span><span class="icon glyphicon"></span><span
+                            class="icon node-icon"></span><span
+                            class="icon check-icon glyphicon glyphicon-unchecked"></span><span
+                            class="label label-success hidden-sm hidden-md hidden-lg"
+                            style="visibility:hidden;">Roh</span><span class="label label-success hidden-xs"
+                            style="visibility:hidden;">Rohové</span>&nbsp;<span
+                            class="label label-primary hidden-sm hidden-md hidden-lg">2 křídla</span><span
+                            class="label label-primary hidden-xs">2-křídlé</span><span
+                            class="hidden-xs">&nbsp;okno</span><span class="hidden-sm hidden-md hidden-lg">&nbsp;<i
+                                class="fa fa-arrow-right"></i>&nbsp;</span><span class="hidden-xs">&nbsp;<i
+                                class="fa fa-minus fa-rotate-270"></i>&nbsp;Rozložení křídel: </span><span
+                            class="label label-danger">F-OS</span></li>
+                    <li style="color:undefined;background-color:undefined;"
+                        class="list-group-item node-treeview-expandible" data-nodeid="5"><span
+                            class="indent"></span><span class="icon glyphicon"></span><span
+                            class="icon node-icon"></span><span
+                            class="icon check-icon glyphicon glyphicon-unchecked"></span><span
+                            class="label label-success hidden-sm hidden-md hidden-lg"
+                            style="visibility:hidden;">Roh</span><span class="label label-success hidden-xs"
+                            style="visibility:hidden;">Rohové</span>&nbsp;<span
+                            class="label label-primary hidden-sm hidden-md hidden-lg">2 křídla</span><span
+                            class="label label-primary hidden-xs">2-křídlé</span><span
+                            class="hidden-xs">&nbsp;okno</span><span class="hidden-sm hidden-md hidden-lg">&nbsp;<i
+                                class="fa fa-arrow-right"></i>&nbsp;</span><span class="hidden-xs">&nbsp;<i
+                                class="fa fa-minus fa-rotate-270"></i>&nbsp;Rozložení křídel: </span><span
+                            class="label label-danger">O-OS</span></li>
+                    <li style="color:undefined;background-color:undefined;"
+                        class="list-group-item node-treeview-expandible" data-nodeid="6"><span
+                            class="indent"></span><span class="icon glyphicon"></span><span
+                            class="icon node-icon"></span><span
+                            class="icon check-icon glyphicon glyphicon-unchecked"></span><span
+                            class="label label-success hidden-sm hidden-md hidden-lg"
+                            style="visibility:hidden;">Roh</span><span class="label label-success hidden-xs"
+                            style="visibility:hidden;">Rohové</span>&nbsp;<span
+                            class="label label-primary hidden-sm hidden-md hidden-lg">2 křídla</span><span
+                            class="label label-primary hidden-xs">2-křídlé</span><span
+                            class="hidden-xs">&nbsp;okno</span><span class="hidden-sm hidden-md hidden-lg">&nbsp;<i
+                                class="fa fa-arrow-right"></i>&nbsp;</span><span class="hidden-xs">&nbsp;<i
+                                class="fa fa-minus fa-rotate-270"></i>&nbsp;Rozložení křídel: </span><span
+                            class="label label-danger">OS-OS</span></li>
+                    <li style="color:undefined;background-color:undefined;"
+                        class="list-group-item node-treeview-expandible" data-nodeid="7"><span
+                            class="indent"></span><span class="icon glyphicon"></span><span
+                            class="icon node-icon"></span><span
+                            class="icon check-icon glyphicon glyphicon-unchecked"></span><span
+                            class="label label-success hidden-sm hidden-md hidden-lg"
+                            style="visibility:hidden;">Roh</span><span class="label label-success hidden-xs"
+                            style="visibility:hidden;">Rohové</span>&nbsp;<span
+                            class="label label-primary hidden-sm hidden-md hidden-lg">2 křídla</span><span
+                            class="label label-primary hidden-xs">2-křídlé</span><span
+                            class="hidden-xs">&nbsp;okno</span><span class="hidden-sm hidden-md hidden-lg">&nbsp;<i
+                                class="fa fa-arrow-right"></i>&nbsp;</span><span class="hidden-xs">&nbsp;<i
+                                class="fa fa-minus fa-rotate-270"></i>&nbsp;Rozložení křídel: </span><span
+                            class="label label-danger">S-S</span></li>
+                    <li style="color:undefined;background-color:undefined;"
+                        class="list-group-item node-treeview-expandible" data-nodeid="8"><span
+                            class="indent"></span><span class="icon glyphicon"></span><span
+                            class="icon node-icon"></span><span
+                            class="icon check-icon glyphicon glyphicon-unchecked"></span><span
+                            class="label label-success hidden-sm hidden-md hidden-lg"
+                            style="visibility:hidden;">Roh</span><span class="label label-success hidden-xs"
+                            style="visibility:hidden;">Rohové</span>&nbsp;<span
+                            class="label label-primary hidden-sm hidden-md hidden-lg">3 křídla</span><span
+                            class="label label-primary hidden-xs">3-křídlé</span><span
+                            class="hidden-xs">&nbsp;okno</span><span class="hidden-sm hidden-md hidden-lg">&nbsp;<i
+                                class="fa fa-arrow-right"></i>&nbsp;</span><span class="hidden-xs">&nbsp;<i
+                                class="fa fa-minus fa-rotate-270"></i>&nbsp;Rozložení křídel: </span><span
+                            class="label label-danger">F-OS-F</span></li>
+                    <li style="color:undefined;background-color:undefined;"
+                        class="list-group-item node-treeview-expandible" data-nodeid="9"><span
+                            class="indent"></span><span class="icon glyphicon"></span><span
+                            class="icon node-icon"></span><span
+                            class="icon check-icon glyphicon glyphicon-unchecked"></span><span
+                            class="label label-success hidden-sm hidden-md hidden-lg"
+                            style="visibility:hidden;">Roh</span><span class="label label-success hidden-xs"
+                            style="visibility:hidden;">Rohové</span>&nbsp;<span
+                            class="label label-primary hidden-sm hidden-md hidden-lg">3 křídla</span><span
+                            class="label label-primary hidden-xs">3-křídlé</span><span
+                            class="hidden-xs">&nbsp;okno</span><span class="hidden-sm hidden-md hidden-lg">&nbsp;<i
+                                class="fa fa-arrow-right"></i>&nbsp;</span><span class="hidden-xs">&nbsp;<i
+                                class="fa fa-minus fa-rotate-270"></i>&nbsp;Rozložení křídel: </span><span
+                            class="label label-danger">OS-OS-OS</span></li>
+                    <li style="color:undefined;background-color:undefined;"
+                        class="list-group-item node-treeview-expandible" data-nodeid="10"><span
+                            class="indent"></span><span class="icon glyphicon"></span><span
+                            class="icon node-icon"></span><span
+                            class="icon check-icon glyphicon glyphicon-unchecked"></span><span
+                            class="label label-success hidden-sm hidden-md hidden-lg"
+                            style="visibility:hidden;">Roh</span><span class="label label-success hidden-xs"
+                            style="visibility:hidden;">Rohové</span>&nbsp;<span
+                            class="label label-primary hidden-sm hidden-md hidden-lg">3 křídla</span><span
+                            class="label label-primary hidden-xs">3-křídlé</span><span
+                            class="hidden-xs">&nbsp;okno</span><span class="hidden-sm hidden-md hidden-lg">&nbsp;<i
+                                class="fa fa-arrow-right"></i>&nbsp;</span><span class="hidden-xs">&nbsp;<i
+                                class="fa fa-minus fa-rotate-270"></i>&nbsp;Rozložení křídel: </span><span
+                            class="label label-danger">OS-F-OS</span></li>
+                    <li style="color:undefined;background-color:undefined;"
+                        class="list-group-item node-treeview-expandible" data-nodeid="11"><span
+                            class="indent"></span><span class="icon glyphicon"></span><span
+                            class="icon node-icon"></span><span
+                            class="icon check-icon glyphicon glyphicon-unchecked"></span><span
+                            class="label label-success hidden-sm hidden-md hidden-lg"
+                            style="visibility:hidden;">Roh</span><span class="label label-success hidden-xs"
+                            style="visibility:hidden;">Rohové</span>&nbsp;<span
+                            class="label label-primary hidden-sm hidden-md hidden-lg">4 křídla</span><span
+                            class="label label-primary hidden-xs">4-křídlé</span><span
+                            class="hidden-xs">&nbsp;okno</span><span class="hidden-sm hidden-md hidden-lg">&nbsp;<i
+                                class="fa fa-arrow-right"></i>&nbsp;</span><span class="hidden-xs">&nbsp;<i
+                                class="fa fa-minus fa-rotate-270"></i>&nbsp;Rozložení křídel: </span><span
+                            class="label label-danger">F-O-OS-F</span></li>
+                    <li style="color:undefined;background-color:undefined;"
+                        class="list-group-item node-treeview-expandible" data-nodeid="12"><span
+                            class="indent"></span><span class="icon glyphicon"></span><span
+                            class="icon node-icon"></span><span
+                            class="icon check-icon glyphicon glyphicon-unchecked"></span><span
+                            class="label label-success hidden-sm hidden-md hidden-lg"
+                            style="visibility:hidden;">Roh</span><span class="label label-success hidden-xs"
+                            style="visibility:hidden;">Rohové</span>&nbsp;<span
+                            class="label label-primary hidden-sm hidden-md hidden-lg">4 křídla</span><span
+                            class="label label-primary hidden-xs">4-křídlé</span><span
+                            class="hidden-xs">&nbsp;okno</span><span class="hidden-sm hidden-md hidden-lg">&nbsp;<i
+                                class="fa fa-arrow-right"></i>&nbsp;</span><span class="hidden-xs">&nbsp;<i
+                                class="fa fa-minus fa-rotate-270"></i>&nbsp;Rozložení křídel: </span><span
+                            class="label label-danger">OS-F-F-OS</span></li>
+                    <li style="color:undefined;background-color:undefined;"
+                        class="list-group-item node-treeview-expandible" data-nodeid="13"><span
+                            class="indent"></span><span class="icon glyphicon"></span><span
+                            class="icon node-icon"></span><span
+                            class="icon check-icon glyphicon glyphicon-unchecked"></span><span
+                            class="label label-success hidden-sm hidden-md hidden-lg">Roh</span><span
+                            class="label label-success hidden-xs">Rohové</span>&nbsp;<span
+                            class="label label-primary hidden-sm hidden-md hidden-lg">2 křídla</span><span
+                            class="label label-primary hidden-xs">2-křídlé</span><span
+                            class="hidden-xs">&nbsp;okno</span><span class="hidden-sm hidden-md hidden-lg">&nbsp;<i
+                                class="fa fa-arrow-right"></i>&nbsp;</span><span class="hidden-xs">&nbsp;<i
+                                class="fa fa-minus fa-rotate-270"></i>&nbsp;Rozložení křídel: </span><span
+                            class="label label-danger">F-F</span></li>
+                    <li style="color:undefined;background-color:undefined;"
+                        class="list-group-item node-treeview-expandible" data-nodeid="14"><span
+                            class="indent"></span><span class="icon glyphicon"></span><span
+                            class="icon node-icon"></span><span
+                            class="icon check-icon glyphicon glyphicon-unchecked"></span><span
+                            class="label label-success hidden-sm hidden-md hidden-lg">Roh</span><span
+                            class="label label-success hidden-xs">Rohové</span>&nbsp;<span
+                            class="label label-primary hidden-sm hidden-md hidden-lg">3 křídla</span><span
+                            class="label label-primary hidden-xs">3-křídlé</span><span
+                            class="hidden-xs">&nbsp;okno</span><span class="hidden-sm hidden-md hidden-lg">&nbsp;<i
+                                class="fa fa-arrow-right"></i>&nbsp;</span><span class="hidden-xs">&nbsp;<i
+                                class="fa fa-minus fa-rotate-270"></i>&nbsp;Rozložení křídel: </span><span
+                            class="label label-danger">F-F-OS</span></li>
+                    <li style="color:undefined;background-color:undefined;"
+                        class="list-group-item node-treeview-expandible" data-nodeid="15"><span
+                            class="indent"></span><span class="icon glyphicon"></span><span
+                            class="icon node-icon"></span><span
+                            class="icon check-icon glyphicon glyphicon-unchecked"></span><span
+                            class="label label-success hidden-sm hidden-md hidden-lg">Roh</span><span
+                            class="label label-success hidden-xs">Rohové</span>&nbsp;<span
+                            class="label label-primary hidden-sm hidden-md hidden-lg">4 křídla</span><span
+                            class="label label-primary hidden-xs">4-křídlé</span><span
+                            class="hidden-xs">&nbsp;okno</span><span class="hidden-sm hidden-md hidden-lg">&nbsp;<i
+                                class="fa fa-arrow-right"></i>&nbsp;</span><span class="hidden-xs">&nbsp;<i
+                                class="fa fa-minus fa-rotate-270"></i>&nbsp;Rozložení křídel: </span><span
+                            class="label label-danger">OS-F-F-OS</span></li>
+                    <li style="color:undefined;background-color:undefined;"
+                        class="list-group-item node-treeview-expandible" data-nodeid="16"><span
+                            class="icon expand-icon glyphicon glyphicon-chevron-right"></span><span
+                            class="icon node-icon"></span><span
+                            class="icon check-icon glyphicon glyphicon-unchecked"></span>ELEMENT<span
+                            class="s pull-right hidden-xs">&nbsp;&nbsp;&nbsp;<span class="label label-default">Children:
+                                17</span></span><span class="pull-right hidden-xs">&nbsp;<span
+                                class="label label-warning">77
+                                mm</span></span><span class="pull-right hidden-xs">&nbsp;<span
+                                class="label label-info">hliníkové</span></span><span
+                            class="pull-right hidden-xs">&nbsp;<span class="label label-default">Posuvné
+                                dveře</span></span></li>
+                    <li style="color:undefined;background-color:undefined;"
+                        class="list-group-item node-treeview-expandible" data-nodeid="34"><span
+                            class="icon expand-icon glyphicon glyphicon-chevron-right"></span><span
+                            class="icon node-icon"></span><span
+                            class="icon check-icon glyphicon glyphicon-unchecked"></span>ELEMENT<span
+                            class="s pull-right hidden-xs">&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                class="label label-default">Children: 4</span>&nbsp;</span><span
+                            class="pull-right hidden-xs">&nbsp;<span class="label label-warning">77
+                                mm</span></span><span class="pull-right hidden-xs">&nbsp;<span
+                                class="label label-info">hliníkové</span></span><span
+                            class="pull-right hidden-xs">&nbsp;<span class="label label-default">Posuvné
+                                dveře</span></span></li>
+                    <li style="color:undefined;background-color:undefined;"
+                        class="list-group-item node-treeview-expandible" data-nodeid="39"><span
+                            class="icon expand-icon glyphicon glyphicon-chevron-right"></span><span
+                            class="icon node-icon"></span><span
+                            class="icon check-icon glyphicon glyphicon-unchecked"></span>ELEMENT<span
+                            class="s pull-right hidden-xs">&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                class="label label-default">Children: 3</span>&nbsp;</span><span
+                            class="pull-right hidden-xs">&nbsp;<span class="label label-warning">90
+                                mm</span></span><span class="pull-right hidden-xs">&nbsp;<span
+                                class="label label-info">hliníkové</span></span><span
+                            class="pull-right hidden-xs">&nbsp;<span class="label label-default">Vchodové
+                                dveře</span></span></li>
+                    <li style="color:undefined;background-color:undefined;"
+                        class="list-group-item node-treeview-expandible" data-nodeid="43"><span
+                            class="icon expand-icon glyphicon glyphicon-chevron-right"></span><span
+                            class="icon node-icon"></span><span
+                            class="icon check-icon glyphicon glyphicon-unchecked"></span>ELEMENT<span
+                            class="s pull-right hidden-xs">&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                class="label label-default">Children: 6</span>&nbsp;</span><span
+                            class="pull-right hidden-xs">&nbsp;<span class="label label-warning">92
+                                mm</span></span><span class="pull-right hidden-xs">&nbsp;<span
+                                class="label label-info">hliníkové</span></span><span
+                            class="pull-right hidden-xs">&nbsp;<span class="label label-default">Vchodové
+                                dveře</span></span></li>
+                    <li style="color:undefined;background-color:undefined;"
+                        class="list-group-item node-treeview-expandible" data-nodeid="47"><span
+                            class="icon expand-icon glyphicon glyphicon-chevron-right"></span><span
+                            class="icon node-icon"></span><span
+                            class="icon check-icon glyphicon glyphicon-unchecked"></span>ELEMENT<span
+                            class="s pull-right hidden-xs">&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                class="label label-default">Children: 5</span>&nbsp;</span><span
+                            class="pull-right hidden-xs">&nbsp;<span class="label label-warning">72
+                                mm</span></span><span class="pull-right hidden-xs">&nbsp;<span
+                                class="label label-info">hliníkové</span></span><span
+                            class="pull-right hidden-xs">&nbsp;<span class="label label-default">Vchodové
+                                dveře</span></span></li>
+                    <li style="color:undefined;background-color:undefined;"
+                        class="list-group-item node-treeview-expandible" data-nodeid="53"><span
+                            class="icon expand-icon glyphicon glyphicon-chevron-right"></span><span
+                            class="icon node-icon"></span><span
+                            class="icon check-icon glyphicon glyphicon-unchecked"></span>ELEMENTK<span
+                            class="s pull-right hidden-xs">&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                class="label label-default">Children: 3</span>&nbsp;</span><span
+                            class="pull-right hidden-xs">&nbsp;<span class="label label-warning">77
+                                mm</span></span><span class="pull-right hidden-xs">&nbsp;<span
+                                class="label label-info">hliníkové</span></span><span
+                            class="pull-right hidden-xs">&nbsp;<span class="label label-default">Posuvné
+                                dveře</span></span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-4" id="BIMContent">
+            <form class="form-default" method="POST" id="filterBIM" style="margin-bottom: 20px;">
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-12" style="padding-left: 0; padding-right: 0;">
+                        <button class="btn btn-default" type="button" title="Zobrazí zpět všechny prvky"
+                            id="resetFilterBtn" style="position: absolute; top: 0; right: 10px; z-index: 100;"
+                            disabled="">X
+                            <i class="fa fa-times" aria-hidden="true"></i>
+                        </button>
+                        <div class="form-group has-feedback text-xs-center col-sm-4 col-md-12">
+
+                            <h4 id="filter-type">Typ konstrukce&nbsp;
+
+                            </h4>
+                            <div class="checkbox">
+                                <label class="label-bolder" for="all_type">
+                                    <input type="checkbox" id="all_type" name="all_type" value="true"
+                                        class="BIMInputFilter typeAllInputFilter" checked="" disabled="">
+                                    &nbsp;VŠE
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label class="label-bolder" for="type_window">
+                                    <input type="checkbox" id="type_window" name="type_window" value="true"
+                                        class="BIMInputFilter typeInputFilter" checked="">
+                                    &nbsp;okno
+                                </label>
+                            </div>
+
+                            <div class="checkbox">
+                                <label class="label-bolder" for="type_sliding">
+                                    <input type="checkbox" id="type_sliding" name="type_sliding" value="true"
+                                        class="BIMInputFilter typeInputFilter" checked="">
+                                    &nbsp;posuvné dveře
+                                </label>
+                            </div>
+
+                            <div class="checkbox">
+                                <label class="label-bolder" for="type_door">
+                                    <input type="checkbox" id="type_door" name="type_door" value="true"
+                                        class="BIMInputFilter typeInputFilter" checked="">
+                                    &nbsp;vchodové dveře
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group has-feedback text-xs-center col-sm-4 col-md-12">
+                            <h4 id="filter-sashes">Počet křídel</h4>
+                            <div class="checkbox">
+                                <label class=" label-bolder" for="all_sash">
+                                    <input type="checkbox" id="all_sash" name="all_sash" value="true"
+                                        class="BIMInputFilter sashAllInputFilter" checked="" disabled="">
+                                    &nbsp;VŠE
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label class=" label-bolder" for="sash_1">
+                                    <input type="checkbox" id="sash_1" name="sash_1" value="true"
+                                        class="BIMInputFilter sashInputFilter" checked="">
+                                    &nbsp;1-křídlé
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label class=" label-bolder" for="sash_2">
+                                    <input type="checkbox" id="sash_2" name="sash_2" value="true"
+                                        class="BIMInputFilter sashInputFilter" checked="">
+                                    &nbsp;2-křídlé
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label class=" label-bolder" for="sash_3">
+                                    <input type="checkbox" id="sash_3" name="sash_3" value="true"
+                                        class="BIMInputFilter sashInputFilter" checked="">
+                                    &nbsp;3-křídlé
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label class=" label-bolder" for="sash_4">
+                                    <input type="checkbox" id="sash_4" name="sash_4" value="true"
+                                        class="BIMInputFilter sashInputFilter" checked="">
+                                    &nbsp;4-křídlé
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label class=" label-bolder" for="sash_5">
+                                    <input type="checkbox" id="sash_5" name="sash_5" value="true"
+                                        class="BIMInputFilter sashInputFilter" checked="">
+                                    &nbsp;5-křídlé
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label class=" label-bolder" for="sash_6">
+                                    <input type="checkbox" id="sash_6" name="sash_6" value="true"
+                                        class="BIMInputFilter sashInputFilter" checked="">
+                                    &nbsp;6-křídlé
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group has-feedback text-xs-center col-sm-4 col-md-12">
+                            <h4 id="filter-depth">Hloubka profilu</h4>
+                            <div class="checkbox">
+                                <label class=" label-bolder" for="all_depth">
+                                    <input type="checkbox" id="all_depth" name="all_depth" value="true"
+                                        class="BIMInputFilter depthAllInputFilter" checked="" disabled="">
+                                    &nbsp;VŠE
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label class=" label-bolder" for="depth_72">
+                                    <input type="checkbox" id="depth_72" name="depth_72" value="true"
+                                        class="BIMInputFilter depthInputFilter" checked="">
+                                    &nbsp;72 mm
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label class=" label-bolder" for="depth_77">
+                                    <input type="checkbox" id="depth_77" name="depth_77" value="true"
+                                        class="BIMInputFilter depthInputFilter" checked="">
+                                    &nbsp;77 mm
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label class=" label-bolder" for="depth_90">
+                                    <input type="checkbox" id="depth_90" name="depth_90" value="true"
+                                        class="BIMInputFilter depthInputFilter" checked="">
+                                    &nbsp;90 mm
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label class=" label-bolder" for="depth_92">
+                                    <input type="checkbox" id="depth_92" name="depth_92" value="true"
+                                        class="BIMInputFilter depthInputFilter" checked="">
+                                    &nbsp;92 mm
+                                </label>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="form-group has-feedback text-md-center col-xs-12 col-sm-12 col-md-12">
+                        <a class="btn btn-warning btn-block" type="button"
+                            title="Začne stahovat všechny prvky do archivu ZIP" id="downloadAll"
+                            style="white-space: normal;" href="">
+                            « STÁHNOUT VŠECHNY PRVKY »
+                        </a>
+                    </div>
+
+
+                </div>
+
+            </form>
+            <div class="row">
+                <div class="col-md-12" style="margin-top: -20px;">
+                    <button class="btn btn-default" type="button" title="Zruší vybrání prvků" id="resetChosenBtn"
+                        style="position: absolute; top: 15px; right: 30px; z-index: 100;" disabled="">X
+                        <i class="fa fa-times" aria-hidden="true"></i>
+                    </button>
+                    <h3 id="checkedElementsHeading">Vybrané prvky (0)</h3>
+                    <div style="margin: 15px;">
+                        <button class="btn btn-primary btn-block text-sm-center text-md-center" type="button"
+                            title="Nejprve vyberte jednotlivé prvky" id="downloadChosen" style="margin: " disabled="">
+                            STÁHNOUT VYBRANÉ
+                        </button>
+                    </div>
+
+
+                    <div id="checkedElements"></div>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+    </div>
+
+    <script type="text/javascript" async="" src="treeview_filtering.js"></script>
+
+
+    <!--[if IE]-->
+    <script>
+        // alert("Congratulations! You are running Internet Explorer 7 or a later version of Internet Explorer.");
+    </script>
+    <!-- <script src="ie-fallback.js"></script> -->
+    <!--[endif]-->
+</body>
+
+</html>
