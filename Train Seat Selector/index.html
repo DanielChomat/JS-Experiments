@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>Document</title>
+	<script src="js/seat-selector.js"></script>
+	<link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+	<section class="train train--seat-selection">
+		<ul class="carts carts--container">
+			<li class="carts__item carts__item--locomotive">
+				<div class="direction-container">
+					<span class="direction-container__arrow">&LongLeftArrow;</span>
+					<span class="direction-container__text">Směr jízdy</span>
+					<span class="direction-container__arrow">&LongLeftArrow;</span>
+				</div>
+				<svg class="locomotive-icon">
+					<use xlink:href="assets/vendor/sprite.svg#locomotive-color" />
+				</svg>
+			</li>
+
+			<li class="carts__item carts__item--food">
+				<button class="btn btn--cart" id="cart-1--button" data-type="food" data-id="1">
+					Restaurační vůz | č. 1
+				</button>
+			</li>
+			<li class="carts__item carts__item--sit">
+				<button class="btn btn--cart" id="cart-2--button" data-type="sit" data-id="2">
+					Sezení | č. 2
+				</button>
+			</li>
+			<li class="carts__item carts__item--bed">
+				<button class="btn btn--cart" id="cart-3--button" data-type="bed" data-id="3">
+					Lehátka | č. 3
+				</button>
+			</li>
+			<li class="carts__item carts__item--bed-RRTS">
+				<button class="btn btn--cart" id="cart-4--button" data-type="bed-RRTS" data-id="4">
+					Lůžka RRTS | č. 4
+				</button>
+			</li>
+		</ul>
+
+		<section class="cart-container">
+			<!-- <div class="rotation-wrapper-outer">
+				<div class="rotation-wrapper-inner"> -->
+			<article class="cart cart--food" id="cart-1">
+				<!-- 
+					<ol class="cart__section cart__section--seats cart__section--seats-top">
+						<li class="seat seat--food">
+							<input type="checkbox" id="11" disabled />
+							<label for="11">
+								<span class="seat__text seat__text--left">11</span>
+								<svg class="seat__icon seat__icon--left">
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3" />
+								</svg>
+							</label>
+						</li>
+						<li class="seat seat--food">
+							<input type="checkbox" id="12" />
+							<label for="12">
+								<span class="seat__text seat__text--right">12</span>
+								<svg class="seat__icon seat__icon--right">
+
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3-free" class="free" />
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3-chosen" class="chosen" />
+								</svg>
+							</label>
+						</li>
+						<li class="seat seat--food">
+							<input type="checkbox" id="13" />
+							<label for="13">
+								<svg class="seat__icon seat__icon--left">
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3-free" class="free" />
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3-chosen" class="chosen" />
+									<text x="28" y="-30" font-family="Verdana" font-size="14" fill="blue">13</text>
+								</svg>
+							</label>
+						</li>
+						<li class="seat seat--food">
+							<input type="checkbox" id="14" />
+							<label for="14">
+								<svg class="seat__icon seat__icon--right">
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3-free" class="free" />
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3-chosen" class="chosen" />
+									<text x="-46" y="40" font-family="Verdana" font-size="14" fill="blue">14</text>
+								</svg>
+							</label>
+						</li>
+					</ol>
+					<ol class="cart__section cart__section--seats cart__section--seats-top">
+						<li class="seat seat--food">
+							<input type="checkbox" id="31" disabled />
+							<label for="31">
+								<svg class="seat__icon seat__icon--left">
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3" />
+									<text x="28" y="-30" font-family="Verdana" font-size="14" fill="blue">31</text>
+								</svg>
+							</label>
+						</li>
+						<li class="seat seat--food">
+							<input type="checkbox" id="32" />
+							<label for="32">
+								<svg class="seat__icon seat__icon--right">
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3-free" class="free" />
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3-chosen" class="chosen" />
+									<text x="-46" y="40" font-family="Verdana" font-size="14" fill="blue">32</text>
+								</svg>
+							</label>
+						</li>
+						<li class="seat seat--food">
+							<input type="checkbox" id="33" />
+							<label for="33">
+								<svg class="seat__icon seat__icon--left">
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3-free" class="free" />
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3-chosen" class="chosen" />
+									<text x="28" y="-30" font-family="Verdana" font-size="14" fill="blue">33</text>
+								</svg>
+							</label>
+						</li>
+						<li class="seat seat--food">
+							<input type="checkbox" id="34" />
+							<label for="34">
+								<svg class="seat__icon seat__icon--right">
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3-free" class="free" />
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3-chosen" class="chosen" />
+									<text x="-46" y="40" font-family="Verdana" font-size="14" fill="blue">34</text>
+								</svg>
+							</label>
+						</li>
+					</ol>
+					<ol class="cart__section cart__section--seats cart__section--seats-top">
+						<li class="seat seat--food">
+							<input type="checkbox" id="51" disabled />
+							<label for="51">
+								<svg class="seat__icon seat__icon--left">
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3" />
+									<text x="28" y="-30" font-family="Verdana" font-size="14" fill="blue">51</text>
+								</svg>
+							</label>
+						</li>
+						<li class="seat seat--food">
+							<input type="checkbox" id="52" />
+							<label for="52">
+								<svg class="seat__icon seat__icon--right">
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3-free" class="free" />
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3-chosen" class="chosen" />
+									<text x="-46" y="40" font-family="Verdana" font-size="14" fill="blue">52</text>
+								</svg>
+							</label>
+						</li>
+						<li class="seat seat--food">
+							<input type="checkbox" id="53" />
+							<label for="53">
+								<svg class="seat__icon seat__icon--left">
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3-free" class="free" />
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3-chosen" class="chosen" />
+									<text x="28" y="-30" font-family="Verdana" font-size="14" fill="blue">53</text>
+								</svg>
+							</label>
+						</li>
+						<li class="seat seat--food">
+							<input type="checkbox" id="54" />
+							<label for="54">
+								<svg class="seat__icon seat__icon--right">
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3-free" class="free" />
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3-chosen" class="chosen" />
+									<text x="-46" y="40" font-family="Verdana" font-size="14" fill="blue">54</text>
+								</svg>
+							</label>
+						</li>
+					</ol>
+					<ol class="cart__section cart__section--seats cart__section--seats-top">
+						<li class="seat seat--food">
+							<input type="checkbox" id="71" disabled />
+							<label for="71">
+								<svg class="seat__icon seat__icon--left">
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3" />
+									<text x="28" y="-30" font-family="Verdana" font-size="14" fill="blue">71</text>
+								</svg>
+							</label>
+						</li>
+						<li class="seat seat--food">
+							<input type="checkbox" id="72" />
+							<label for="72">
+								<svg class="seat__icon seat__icon--right">
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3-free" class="free" />
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3-chosen" class="chosen" />
+									<text x="-46" y="40" font-family="Verdana" font-size="14" fill="blue">72</text>
+								</svg>
+							</label>
+						</li>
+						<li class="seat seat--food">
+							<input type="checkbox" id="73" />
+							<label for="73">
+								<svg class="seat__icon seat__icon--left">
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3-free" class="free" />
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3-chosen" class="chosen" />
+									<text x="28" y="-30" font-family="Verdana" font-size="14" fill="blue">73</text>
+								</svg>
+							</label>
+						</li>
+						<li class="seat seat--food">
+							<input type="checkbox" id="74" />
+							<label for="74">
+								<svg class="seat__icon seat__icon--right">
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3-free" class="free" />
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3-chosen" class="chosen" />
+									<text x="-46" y="40" font-family="Verdana" font-size="14" fill="blue">74</text>
+								</svg>
+							</label>
+						</li>
+					</ol>
+					<ol class="cart__section cart__section--seats cart__section--seats-top">
+						<li class="seat seat--food">
+							<input type="checkbox" id="91" disabled />
+							<label for="91">
+								<svg class="seat__icon seat__icon--left">
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3" />
+									<text x="28" y="-30" font-family="Verdana" font-size="14" fill="blue">91</text>
+								</svg>
+							</label>
+						</li>
+						<li class="seat seat--food">
+							<input type="checkbox" id="92" />
+							<label for="92">
+								<svg class="seat__icon seat__icon--right">
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3-free" class="free" />
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3-chosen" class="chosen" />
+									<text x="-46" y="40" font-family="Verdana" font-size="14" fill="blue">92</text>
+								</svg>
+							</label>
+						</li>
+						<li class="seat seat--food">
+							<input type="checkbox" id="93" />
+							<label for="93">
+								<svg class="seat__icon seat__icon--left">
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3-free" class="free" />
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3-chosen" class="chosen" />
+									<text x="28" y="-30" font-family="Verdana" font-size="14" fill="blue">93</text>
+								</svg>
+							</label>
+						</li>
+						<li class="seat seat--food">
+							<input type="checkbox" id="94" />
+							<label for="94">
+								<svg class="seat__icon seat__icon--right">
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3-free" class="free" />
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3-chosen" class="chosen" />
+									<text x="-46" y="40" font-family="Verdana" font-size="14" fill="blue">94</text>
+								</svg>
+							</label>
+						</li>
+					</ol>
+					<ol class="cart__section cart__section--seats cart__section--seats-top">
+						<li class="seat seat--food">
+							<input type="checkbox" id="111" disabled />
+							<label for="111">
+								<svg class="seat__icon seat__icon--left">
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3" />
+									<text x="27" y="-30" font-family="Verdana" font-size="14" fill="blue">111</text>
+								</svg>
+							</label>
+						</li>
+						<li class="seat seat--food">
+							<input type="checkbox" id="112" />
+							<label for="112">
+								<svg class="seat__icon seat__icon--right">
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3-free" class="free" />
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3-chosen" class="chosen" />
+									<text x="-50" y="40" font-family="Verdana" font-size="14" fill="blue">112</text>
+								</svg>
+							</label>
+						</li>
+						<li class="seat seat--food">
+							<input type="checkbox" id="113" />
+							<label for="113">
+								<svg class="seat__icon seat__icon--left">
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3-free" class="free" />
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3-chosen" class="chosen" />
+									<text x="27" y="-30" font-family="Verdana" font-size="14" fill="blue">113</text>
+								</svg>
+							</label>
+						</li>
+						<li class="seat seat--food">
+							<input type="checkbox" id="114" />
+							<label for="114">
+								<svg class="seat__icon seat__icon--right">
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3-free" class="free" />
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3-chosen" class="chosen" />
+									<text x="-50" y="40" font-family="Verdana" font-size="14" fill="blue">114</text>
+								</svg>
+							</label>
+						</li>
+					</ol>
+					<div class="cart__section cart__section--hallway"><span>Chodba</span></div>
+					<div class="cart__section cart__section--hallway"><span>Chodba</span></div>
+					<ol class="cart__section cart__section--seats cart__section--seats-bottom">
+						<li class="seat seat--food">
+							<input type="checkbox" id="21" disabled />
+							<label for="21">
+								<svg class="seat__icon seat__icon--left">
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3" />
+									<text x="28" y="-30" font-family="Verdana" font-size="14" fill="blue">21</text>
+								</svg>
+							</label>
+						</li>
+						<li class="seat seat--food">
+							<input type="checkbox" id="22" />
+							<label for="22">
+								<svg class="seat__icon seat__icon--right">
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3-free" class="free" />
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3-chosen" class="chosen" />
+									<text x="-46" y="40" font-family="Verdana" font-size="14" fill="blue">22</text>
+								</svg>
+							</label>
+						</li>
+						<li class="seat seat--food">
+							<input type="checkbox" id="23" />
+							<label for="23">
+								<svg class="seat__icon seat__icon--left">
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3-free" class="free" />
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3-chosen" class="chosen" />
+									<text x="28" y="-30" font-family="Verdana" font-size="14" fill="blue">23</text>
+								</svg>
+							</label>
+						</li>
+						<li class="seat seat--food">
+							<input type="checkbox" id="24" />
+							<label for="24">
+								<svg class="seat__icon seat__icon--right">
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3-free" class="free" />
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3-chosen" class="chosen" />
+									<text x="-46" y="40" font-family="Verdana" font-size="14" fill="blue">24</text>
+								</svg>
+							</label>
+						</li>
+					</ol>
+					<ol class="cart__section cart__section--seats cart__section--seats-bottom">
+						<li class="seat seat--food">
+							<input type="checkbox" id="41" disabled />
+							<label for="41">
+								<svg class="seat__icon seat__icon--left">
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3" />
+									<text x="28" y="-30" font-family="Verdana" font-size="14" fill="blue">41</text>
+								</svg>
+							</label>
+						</li>
+						<li class="seat seat--food">
+							<input type="checkbox" id="42" />
+							<label for="42">
+								<svg class="seat__icon seat__icon--right">
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3-free" class="free" />
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3-chosen" class="chosen" />
+									<text x="-46" y="40" font-family="Verdana" font-size="14" fill="blue">42</text>
+								</svg>
+							</label>
+						</li>
+						<li class="seat seat--food">
+							<input type="checkbox" id="43" />
+							<label for="43">
+								<svg class="seat__icon seat__icon--left">
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3-free" class="free" />
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3-chosen" class="chosen" />
+									<text x="28" y="-30" font-family="Verdana" font-size="14" fill="blue">43</text>
+								</svg>
+							</label>
+						</li>
+						<li class="seat seat--food">
+							<input type="checkbox" id="44" />
+							<label for="44">
+								<svg class="seat__icon seat__icon--right">
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3-free" class="free" />
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3-chosen" class="chosen" />
+									<text x="-46" y="40" font-family="Verdana" font-size="14" fill="blue">44</text>
+								</svg>
+							</label>
+						</li>
+					</ol>
+					<ol class="cart__section cart__section--seats cart__section--seats-bottom">
+						<li class="seat seat--food">
+							<input type="checkbox" id="61" disabled />
+							<label for="61">
+								<svg class="seat__icon seat__icon--left">
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3" />
+									<text x="28" y="-30" font-family="Verdana" font-size="14" fill="blue">61</text>
+								</svg>
+							</label>
+						</li>
+						<li class="seat seat--food">
+							<input type="checkbox" id="62" />
+							<label for="62">
+								<svg class="seat__icon seat__icon--right">
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3-free" class="free" />
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3-chosen" class="chosen" />
+									<text x="-46" y="40" font-family="Verdana" font-size="14" fill="blue">62</text>
+								</svg>
+							</label>
+						</li>
+						<li class="seat seat--food">
+							<input type="checkbox" id="63" />
+							<label for="63">
+								<svg class="seat__icon seat__icon--left">
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3-free" class="free" />
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3-chosen" class="chosen" />
+									<text x="28" y="-30" font-family="Verdana" font-size="14" fill="blue">63</text>
+								</svg>
+							</label>
+						</li>
+						<li class="seat seat--food">
+							<input type="checkbox" id="64" />
+							<label for="64">
+								<svg class="seat__icon seat__icon--right">
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3-free" class="free" />
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3-chosen" class="chosen" />
+									<text x="-46" y="40" font-family="Verdana" font-size="14" fill="blue">64</text>
+								</svg>
+							</label>
+						</li>
+					</ol>
+					<ol class="cart__section cart__section--seats cart__section--seats-bottom">
+						<li class="seat seat--food">
+							<input type="checkbox" id="81" disabled />
+							<label for="81">
+								<svg class="seat__icon seat__icon--left">
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3" />
+									<text x="28" y="-30" font-family="Verdana" font-size="14" fill="blue">81</text>
+								</svg>
+							</label>
+						</li>
+						<li class="seat seat--food">
+							<input type="checkbox" id="82" />
+							<label for="82">
+								<svg class="seat__icon seat__icon--right">
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3-free" class="free" />
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3-chosen" class="chosen" />
+									<text x="-46" y="40" font-family="Verdana" font-size="14" fill="blue">82</text>
+								</svg>
+							</label>
+						</li>
+						<li class="seat seat--food">
+							<input type="checkbox" id="83" />
+							<label for="83">
+								<svg class="seat__icon seat__icon--left">
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3-free" class="free" />
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3-chosen" class="chosen" />
+									<text x="28" y="-30" font-family="Verdana" font-size="14" fill="blue">83</text>
+								</svg>
+							</label>
+						</li>
+						<li class="seat seat--food">
+							<input type="checkbox" id="84" />
+							<label for="84">
+								<svg class="seat__icon seat__icon--right">
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3-free" class="free" />
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3-chosen" class="chosen" />
+									<text x="-46" y="40" font-family="Verdana" font-size="14" fill="blue">84</text>
+								</svg>
+							</label>
+						</li>
+					</ol>
+					<ol class="cart__section cart__section--seats cart__section--seats-bottom">
+						<li class="seat seat--food">
+							<input type="checkbox" id="101" disabled />
+							<label for="101">
+								<svg class="seat__icon seat__icon--left">
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3" />
+									<text x="27" y="-30" font-family="Verdana" font-size="14" fill="blue">101</text>
+								</svg>
+							</label>
+						</li>
+						<li class="seat seat--food">
+							<input type="checkbox" id="102" />
+							<label for="102">
+								<svg class="seat__icon seat__icon--right">
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3-free" class="free" />
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3-chosen" class="chosen" />
+									<text x="-50" y="40" font-family="Verdana" font-size="14" fill="blue">102</text>
+								</svg>
+							</label>
+						</li>
+						<li class="seat seat--food">
+							<input type="checkbox" id="103" />
+							<label for="103">
+								<svg class="seat__icon seat__icon--left">
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3-free" class="free" />
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3-chosen" class="chosen" />
+									<text x="27" y="-30" font-family="Verdana" font-size="14" fill="blue">103</text>
+								</svg>
+							</label>
+						</li>
+						<li class="seat seat--food">
+							<input type="checkbox" id="104" />
+							<label for="104">
+								<svg class="seat__icon seat__icon--right">
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3-free" class="free" />
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3-chosen" class="chosen" />
+									<text x="-50" y="40" font-family="Verdana" font-size="14" fill="blue">104</text>
+								</svg>
+							</label>
+						</li>
+					</ol>
+					<ol class="cart__section cart__section--seats cart__section--seats-bottom">
+						<li class="seat seat--food">
+							<input type="checkbox" id="121" disabled />
+							<label for="121">
+								<svg class="seat__icon seat__icon--left">
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3" />
+									<text x="27" y="-30" font-family="Verdana" font-size="14" fill="blue">121</text>
+								</svg>
+							</label>
+						</li>
+						<li class="seat seat--food">
+							<input type="checkbox" id="122" />
+							<label for="122">
+								<svg class="seat__icon seat__icon--right">
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3-free" class="free" />
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3-chosen" class="chosen" />
+									<text x="-50" y="40" font-family="Verdana" font-size="14" fill="blue">122</text>
+								</svg>
+							</label>
+						</li>
+						<li class="seat seat--food">
+							<input type="checkbox" id="123" />
+							<label for="123">
+								<svg class="seat__icon seat__icon--left">
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3-free" class="free" />
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3-chosen" class="chosen" />
+									<text x="27" y="-30" font-family="Verdana" font-size="14" fill="blue">123</text>
+								</svg>
+							</label>
+						</li>
+						<li class="seat seat--food">
+							<input type="checkbox" id="124" />
+							<label for="124">
+								<svg class="seat__icon seat__icon--right">
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3-free" class="free" />
+									<use xlink:href="assets/vendor/sprite-seat.svg#seat-3-chosen" class="chosen" />
+									<text x="-50" y="40" font-family="Verdana" font-size="14" fill="blue">124</text>
+								</svg>
+							</label>
+						</li>
+					</ol> 
+				-->
+			</article>
+			<article class="cart cart--sit cart--shown" id="cart-2">
+				<!-- <ol class="cart__section cart__section--seats cart__section--seats-top">
+					<li class="seat seat--sit">21</li>
+					<li class="seat seat--sit">22</li>
+					<li class="seat seat--sit">23</li>
+					<li class="seat seat--sit">24</li>
+					<li class="seat seat--sit">24</li>
+					<li class="seat seat--sit">24</li>
+					<li class="seat seat--sit">24</li>
+					<li class="seat seat--sit">24</li>
+				</ol>
+				<ol class="cart__section cart__section--seats cart__section--seats-top">
+					<li class="seat seat--sit">21</li>
+					<li class="seat seat--sit">22</li>
+					<li class="seat seat--sit">23</li>
+					<li class="seat seat--sit">24</li>
+					<li class="seat seat--sit">24</li>
+					<li class="seat seat--sit">24</li>
+					<li class="seat seat--sit">24</li>
+					<li class="seat seat--sit">24</li>
+				</ol>
+				<ol class="cart__section cart__section--seats cart__section--seats-top">
+					<li class="seat seat--sit">21</li>
+					<li class="seat seat--sit">22</li>
+					<li class="seat seat--sit">23</li>
+					<li class="seat seat--sit">24</li>
+					<li class="seat seat--sit">24</li>
+					<li class="seat seat--sit">24</li>
+					<li class="seat seat--sit">24</li>
+					<li class="seat seat--sit">24</li>
+				</ol>
+				<ol class="cart__section cart__section--seats cart__section--seats-top">
+					<li class="seat seat--sit">21</li>
+					<li class="seat seat--sit">22</li>
+					<li class="seat seat--sit">23</li>
+					<li class="seat seat--sit">24</li>
+					<li class="seat seat--sit">24</li>
+					<li class="seat seat--sit">24</li>
+					<li class="seat seat--sit">24</li>
+					<li class="seat seat--sit">24</li>
+				</ol>
+				<ol class="cart__section cart__section--seats cart__section--seats-top">
+					<li class="seat seat--sit">21</li>
+					<li class="seat seat--sit">22</li>
+					<li class="seat seat--sit">23</li>
+					<li class="seat seat--sit">24</li>
+					<li class="seat seat--sit">24</li>
+					<li class="seat seat--sit">24</li>
+					<li class="seat seat--sit">24</li>
+					<li class="seat seat--sit">24</li>
+				</ol>
+				<ol class="cart__section cart__section--seats cart__section--seats-top">
+					<li class="seat seat--sit">21</li>
+					<li class="seat seat--sit">22</li>
+					<li class="seat seat--sit">23</li>
+					<li class="seat seat--sit">24</li>
+					<li class="seat seat--sit">24</li>
+					<li class="seat seat--sit">24</li>
+					<li class="seat seat--sit">24</li>
+					<li class="seat seat--sit">24</li>
+				</ol>
+				<ol class="cart__section cart__section--seats cart__section--seats-top">
+					<li class="seat seat--sit">21</li>
+					<li class="seat seat--sit">22</li>
+					<li class="seat seat--sit">23</li>
+					<li class="seat seat--sit">24</li>
+					<li class="seat seat--sit">24</li>
+					<li class="seat seat--sit">24</li>
+					<li class="seat seat--sit">24</li>
+					<li class="seat seat--sit">24</li>
+				</ol>
+				<ol class="cart__section cart__section--seats cart__section--seats-top">
+					<li class="seat seat--sit">21</li>
+					<li class="seat seat--sit">22</li>
+					<li class="seat seat--sit">23</li>
+					<li class="seat seat--sit">24</li>
+					<li class="seat seat--sit">24</li>
+					<li class="seat seat--sit">24</li>
+					<li class="seat seat--sit">24</li>
+					<li class="seat seat--sit">24</li>
+				</ol>
+				<div class="cart__section cart__section--hallway"><span>Chodba</span></div>
+				<div class="cart__section cart__section--hallway"><span>Chodba</span></div> -->
+			</article>
+			<article class="cart cart--bed" id="cart-3">
+				<!-- <ol class="cart__section cart__section--seats cart__section--seats-top">
+					<li class="seat seat--bed">21</li>
+					<li class="seat seat--bed">22</li>
+					<li class="seat seat--bed">23</li>
+					<li class="seat seat--bed">24</li>
+					<li class="seat seat--bed">25</li>
+					<li class="seat seat--bed">26</li>
+				</ol>
+				<ol class="cart__section cart__section--seats cart__section--seats-top">
+					<li class="seat seat--bed">21</li>
+					<li class="seat seat--bed">22</li>
+					<li class="seat seat--bed">23</li>
+					<li class="seat seat--bed">24</li>
+					<li class="seat seat--bed">25</li>
+					<li class="seat seat--bed">26</li>
+				</ol>
+				<ol class="cart__section cart__section--seats cart__section--seats-top">
+					<li class="seat seat--bed">21</li>
+					<li class="seat seat--bed">22</li>
+					<li class="seat seat--bed">23</li>
+					<li class="seat seat--bed">24</li>
+					<li class="seat seat--bed">25</li>
+					<li class="seat seat--bed">26</li>
+				</ol>
+				<ol class="cart__section cart__section--seats cart__section--seats-top">
+					<li class="seat seat--bed">21</li>
+					<li class="seat seat--bed">22</li>
+					<li class="seat seat--bed">23</li>
+					<li class="seat seat--bed">24</li>
+					<li class="seat seat--bed">25</li>
+					<li class="seat seat--bed">26</li>
+				</ol>
+				<ol class="cart__section cart__section--seats cart__section--seats-top">
+					<li class="seat seat--bed">21</li>
+					<li class="seat seat--bed">22</li>
+					<li class="seat seat--bed">23</li>
+					<li class="seat seat--bed">24</li>
+					<li class="seat seat--bed">25</li>
+					<li class="seat seat--bed">26</li>
+				</ol>
+				<ol class="cart__section cart__section--seats cart__section--seats-top">
+					<li class="seat seat--bed">21</li>
+					<li class="seat seat--bed">22</li>
+					<li class="seat seat--bed">23</li>
+					<li class="seat seat--bed">24</li>
+					<li class="seat seat--bed">25</li>
+					<li class="seat seat--bed">26</li>
+				</ol>
+				<ol class="cart__section cart__section--seats cart__section--seats-top">
+					<li class="seat seat--bed">21</li>
+					<li class="seat seat--bed">22</li>
+					<li class="seat seat--bed">23</li>
+					<li class="seat seat--bed">24</li>
+					<li class="seat seat--bed">25</li>
+					<li class="seat seat--bed">26</li>
+				</ol>
+				<ol class="cart__section cart__section--seats cart__section--seats-top">
+					<li class="seat seat--bed">21</li>
+					<li class="seat seat--bed">22</li>
+					<li class="seat seat--bed">23</li>
+					<li class="seat seat--bed">24</li>
+					<li class="seat seat--bed">25</li>
+					<li class="seat seat--bed">26</li>
+				</ol>
+				<div class="cart__section cart__section--hallway"><span>Chodba</span></div>
+				<div class="cart__section cart__section--hallway"><span>Chodba</span></div> -->
+			</article>
+			<article class="cart cart--bed-RRTS" id="cart-4">
+				<!-- <ol class="cart__section cart__section--seats cart__section--seats-top">
+					<li class="seat seat--bed-RRTS">21</li>
+					<li class="seat seat--bed-RRTS seat--free"></li>
+					<li class="seat seat--bed-RRTS">22</li>
+					<li class="seat seat--bed-RRTS seat--free"></li>
+					<li class="seat seat--bed-RRTS">23</li>
+					<li class="seat seat--bed-RRTS seat--free"></li>
+				</ol>
+				<ol class="cart__section cart__section--seats cart__section--seats-top">
+					<li class="seat seat--bed-RRTS">21</li>
+					<li class="seat seat--bed-RRTS seat--free"></li>
+					<li class="seat seat--bed-RRTS">22</li>
+					<li class="seat seat--bed-RRTS seat--free"></li>
+					<li class="seat seat--bed-RRTS">23</li>
+					<li class="seat seat--bed-RRTS seat--free"></li>
+				</ol>
+				<ol class="cart__section cart__section--seats cart__section--seats-top">
+					<li class="seat seat--bed-RRTS">21</li>
+					<li class="seat seat--bed-RRTS seat--free"></li>
+					<li class="seat seat--bed-RRTS">22</li>
+					<li class="seat seat--bed-RRTS seat--free"></li>
+					<li class="seat seat--bed-RRTS">23</li>
+					<li class="seat seat--bed-RRTS seat--free"></li>
+				</ol>
+				<ol class="cart__section cart__section--seats cart__section--seats-top">
+					<li class="seat seat--bed-RRTS">21</li>
+					<li class="seat seat--bed-RRTS seat--free"></li>
+					<li class="seat seat--bed-RRTS">22</li>
+					<li class="seat seat--bed-RRTS seat--free"></li>
+					<li class="seat seat--bed-RRTS">23</li>
+					<li class="seat seat--bed-RRTS seat--free"></li>
+				</ol>
+				<ol class="cart__section cart__section--seats cart__section--seats-top">
+					<li class="seat seat--bed-RRTS">21</li>
+					<li class="seat seat--bed-RRTS seat--free"></li>
+					<li class="seat seat--bed-RRTS">22</li>
+					<li class="seat seat--bed-RRTS seat--free"></li>
+					<li class="seat seat--bed-RRTS">23</li>
+					<li class="seat seat--bed-RRTS seat--free"></li>
+				</ol>
+				<ol class="cart__section cart__section--seats cart__section--seats-top">
+					<li class="seat seat--bed-RRTS">21</li>
+					<li class="seat seat--bed-RRTS seat--free"></li>
+					<li class="seat seat--bed-RRTS">22</li>
+					<li class="seat seat--bed-RRTS seat--free"></li>
+					<li class="seat seat--bed-RRTS">23</li>
+					<li class="seat seat--bed-RRTS seat--free"></li>
+				</ol>
+				<ol class="cart__section cart__section--seats cart__section--seats-top">
+					<li class="seat seat--bed-RRTS">21</li>
+					<li class="seat seat--bed-RRTS seat--free"></li>
+					<li class="seat seat--bed-RRTS">22</li>
+					<li class="seat seat--bed-RRTS seat--free"></li>
+					<li class="seat seat--bed-RRTS">23</li>
+					<li class="seat seat--bed-RRTS seat--free"></li>
+				</ol>
+				<ol class="cart__section cart__section--seats cart__section--seats-top">
+					<li class="seat seat--bed-RRTS">21</li>
+					<li class="seat seat--bed-RRTS seat--free"></li>
+					<li class="seat seat--bed-RRTS">22</li>
+					<li class="seat seat--bed-RRTS seat--free"></li>
+					<li class="seat seat--bed-RRTS">23</li>
+					<li class="seat seat--bed-RRTS seat--free"></li>
+				</ol>
+				<div class="cart__section cart__section--hallway"><span>Chodba</span></div>
+				<div class="cart__section cart__section--hallway"><span>Chodba</span></div> -->
+			</article>
+			<!-- </div>
+			</div> -->
+		</section>
+
+		<legend>
+			<ul class="legend-seats">
+				<h3 class="legend-seats__heading">Legenda</h3>
+				<li class="legend-seats__item legend-seats__item--chosen">
+					Vybrané
+				</li>
+				<li class="legend-seats__item legend-seats__item--free">
+					Volné
+				</li>
+				<li class="legend-seats__item legend-seats__item--disabled">
+					Obsazené
+				</li>
+			</ul>
+			<section class="chosen-seats">
+				<div class="chosen-seats__title">
+					<h2 class="chosen-seats__heading">
+						Vybraná sedadla:
+						<span class="chosen-seats__count">
+							<span class="chosen-seats__count--chosen">0</span>&nbsp;/&nbsp;<span
+								class="chosen-seats__count--all">5</span>
+						</span>
+					</h2>
+				</div>
+				<div class="chosen-seats__trains">
+					<div class="chosen-seats__train-box chosen-seats__train-box--skeleton">
+						<svg class="chosen-seats__icon chosen-seats__icon--wagon">
+							<use xlink:href="assets/vendor/sprite.svg#wagon" />
+						</svg>
+						<p class="chosen-seats__box-text chosen-seats__box-text--wagon">1</p>
+						<!-- <svg class="chosen-seats__icon chosen-seats__icon--seat chosen-seats__icon--seat-rotated">
+							<use xlink:href="assets/vendor/sprite-seat.svg#seat-edited" />
+						</svg> -->
+						<svg class="chosen-seats__icon chosen-seats__icon--seat">
+							<use xlink:href="assets/vendor/sprite-seat.svg#seat-3-edited" />
+						</svg>
+						<p class="chosen-seats__box-text">99</p>
+
+					</div>
+					<!-- <div class="chosen-seats__train-box">
+						<svg class="chosen-seats__icon chosen-seats__icon--wagon">
+							<use xlink:href="assets/vendor/sprite.svg#wagon" />
+						</svg>
+						<p class="chosen-seats__box-text chosen-seats__box-text--wagon">3</p>
+						<svg class="chosen-seats__icon chosen-seats__icon--seat">
+							<use xlink:href="assets/vendor/sprite-seat.svg#seat-3-edited" />
+						</svg>
+						<p class="chosen-seats__box-text">99, 110</p>
+					</div> -->
+				</div>
+
+			</section>
+		</legend>
+
+	</section>
+
+
+
+	<div class="cart-old cart__food">
+		<ol class="left-side" id="leftSide">
+			<!-- <li class="row-seats">
+                        <ol class="seats-grid row-2">
+                            <li class="seat-grid">
+                                <input type="checkbox" id="01" />
+								<label for="01">01</label>
+							</li>
+							<li class="seat-grid">
+								<input type="checkbox" id="02" />
+								<label for="02">02</label>
+							</li>
+							<li class="seat-grid">
+								<input type="checkbox" id="2A" />
+								<label for="2A">2A</label>
+							</li>
+							<li class="seat-grid">
+                                <input type="checkbox" id="2B" />
+								<label for="2B">2B</label>
+							</li>
+						</ol>
+					</li> -->
+		</ol>
+		<ol class="right-side" id="rightSide"></ol>
+	</div>
+	</div>
+	<h2>Přepravní vůz</h2>
+	<!-- <div class="cart-container">
+		<div class="cart cart__passenger"> -->
+	<!-- <ol class="left-side" id="leftSide">
+					<li class="row-seats">
+                        <ol class="seats-grid row-2">
+                            <li class="seat-grid">
+                                <input type="checkbox" id="01" />
+								<label for="01">01</label>
+							</li>
+							<li class="seat-grid">
+								<input type="checkbox" id="02" />
+								<label for="02">02</label>
+							</li>
+							<li class="seat-grid">
+								<input type="checkbox" id="2A" />
+								<label for="2A">2A</label>
+							</li>
+							<li class="seat-grid">
+                                <input type="checkbox" id="2B" />
+								<label for="2B">2B</label>
+							</li>
+						</ol>
+					</li>
+				</ol>
+				<ol class="right-side" id="rightSide"></ol> -->
+	<!-- </div>
+	</div>
+	<div>
+		<ol class="cabin fuselage">
+			<li class="row row--1">
+				<ol class="seats" type="A">
+					<li class="seat-old">
+						<input type="checkbox" id="1A" />
+						<label for="1A">1A</label>
+					</li>
+					<li class="seat-old">
+						<input type="checkbox" id="1B" />
+						<label for="1B">1B</label>
+					</li>
+					<li class="seat-old">
+						<input type="checkbox" id="1C" />
+						<label for="1C">1C</label>
+					</li>
+					<li class="seat-old">
+						<input type="checkbox" disabled id="1D" />
+						<label for="1D">Occupied</label>
+					</li>
+					<li class="seat-old">
+						<input type="checkbox" id="1E" />
+						<label for="1E">1E</label>
+					</li>
+					<li class="seat-old">
+						<input type="checkbox" id="1F" />
+						<label for="1F">1F</label>
+					</li>
+				</ol>
+			</li>
+			<li class="row row--2">
+				<ol class="seats" type="A">
+					<li class="seat-old">
+						<input type="checkbox" id="2A" />
+						<label for="2A">2A</label>
+					</li>
+					<li class="seat-old">
+						<input type="checkbox" id="2B" />
+						<label for="2B">2B</label>
+					</li>
+					<li class="seat-old">
+						<input type="checkbox" id="2C" />
+						<label for="2C">2C</label>
+					</li>
+					<li class="seat-old">
+						<input type="checkbox" id="2D" />
+						<label for="2D">2D</label>
+					</li>
+					<li class="seat-old">
+						<input type="checkbox" id="2E" />
+						<label for="2E">2E</label>
+					</li>
+					<li class="seat-old">
+						<input type="checkbox" id="2F" />
+						<label for="2F">2F</label>
+					</li>
+				</ol>
+			</li>
+			<li class="row row--3">
+				<ol class="seats" type="A">
+					<li class="seat-old">
+						<input type="checkbox" id="3A" />
+						<label for="3A">3A</label>
+					</li>
+					<li class="seat-old">
+						<input type="checkbox" id="3B" />
+						<label for="3B">3B</label>
+					</li>
+					<li class="seat-old">
+						<input type="checkbox" id="3C" />
+						<label for="3C">3C</label>
+					</li>
+					<li class="seat-old">
+						<input type="checkbox" id="3D" />
+						<label for="3D">3D</label>
+					</li>
+					<li class="seat-old">
+						<input type="checkbox" id="3E" />
+						<label for="3E">3E</label>
+					</li>
+					<li class="seat-old">
+						<input type="checkbox" id="3F" />
+						<label for="3F">3F</label>
+					</li>
+				</ol>
+			</li>
+			<li class="row row--4">
+				<ol class="seats" type="A">
+					<li class="seat-old">
+						<input type="checkbox" id="4A" />
+						<label for="4A">4A</label>
+					</li>
+					<li class="seat-old">
+						<input type="checkbox" id="4B" />
+						<label for="4B">4B</label>
+					</li>
+					<li class="seat-old">
+						<input type="checkbox" id="4C" />
+						<label for="4C">4C</label>
+					</li>
+					<li class="seat-old">
+						<input type="checkbox" id="4D" />
+						<label for="4D">4D</label>
+					</li>
+					<li class="seat-old">
+						<input type="checkbox" id="4E" />
+						<label for="4E">4E</label>
+					</li>
+					<li class="seat-old">
+						<input type="checkbox" id="4F" />
+						<label for="4F">4F</label>
+					</li>
+				</ol>
+			</li>
+			<li class="row row--5">
+				<ol class="seats" type="A">
+					<li class="seat-old">
+						<input type="checkbox" id="5A" />
+						<label for="5A">5A</label>
+					</li>
+					<li class="seat-old">
+						<input type="checkbox" id="5B" />
+						<label for="5B">5B</label>
+					</li>
+					<li class="seat-old">
+						<input type="checkbox" id="5C" />
+						<label for="5C">5C</label>
+					</li>
+					<li class="seat-old">
+						<input type="checkbox" id="5D" />
+						<label for="5D">5D</label>
+					</li>
+					<li class="seat-old">
+						<input type="checkbox" id="5E" />
+						<label for="5E">5E</label>
+					</li>
+					<li class="seat-old">
+						<input type="checkbox" id="5F" />
+						<label for="5F">5F</label>
+					</li>
+				</ol>
+			</li>
+			<li class="row row--6">
+				<ol class="seats" type="A">
+					<li class="seat-old">
+						<input type="checkbox" id="6A" />
+						<label for="6A">6A</label>
+					</li>
+					<li class="seat-old">
+						<input type="checkbox" id="6B" />
+						<label for="6B">6B</label>
+					</li>
+					<li class="seat-old">
+						<input type="checkbox" id="6C" />
+						<label for="6C">6C</label>
+					</li>
+					<li class="seat-old">
+						<input type="checkbox" id="6D" />
+						<label for="6D">6D</label>
+					</li>
+					<li class="seat-old">
+						<input type="checkbox" id="6E" />
+						<label for="6E">6E</label>
+					</li>
+					<li class="seat-old">
+						<input type="checkbox" id="6F" />
+						<label for="6F">6F</label>
+					</li>
+				</ol>
+			</li>
+			<li class="row row--7">
+				<ol class="seats" type="A">
+					<li class="seat-old">
+						<input type="checkbox" id="7A" />
+						<label for="7A">7A</label>
+					</li>
+					<li class="seat-old">
+						<input type="checkbox" id="7B" />
+						<label for="7B">7B</label>
+					</li>
+					<li class="seat-old">
+						<input type="checkbox" id="7C" />
+						<label for="7C">7C</label>
+					</li>
+					<li class="seat-old">
+						<input type="checkbox" id="7D" />
+						<label for="7D">7D</label>
+					</li>
+					<li class="seat-old">
+						<input type="checkbox" id="7E" />
+						<label for="7E">7E</label>
+					</li>
+					<li class="seat-old">
+						<input type="checkbox" id="7F" />
+						<label for="7F">7F</label>
+					</li>
+				</ol>
+			</li>
+			<li class="row row--8">
+				<ol class="seats" type="A">
+					<li class="seat-old">
+						<input type="checkbox" id="8A" />
+						<label for="8A">8A</label>
+					</li>
+					<li class="seat-old">
+						<input type="checkbox" id="8B" />
+						<label for="8B">8B</label>
+					</li>
+					<li class="seat-old">
+						<input type="checkbox" id="8C" />
+						<label for="8C">8C</label>
+					</li>
+					<li class="seat-old">
+						<input type="checkbox" id="8D" />
+						<label for="8D">8D</label>
+					</li>
+					<li class="seat-old">
+						<input type="checkbox" id="8E" />
+						<label for="8E">8E</label>
+					</li>
+					<li class="seat-old">
+						<input type="checkbox" id="8F" />
+						<label for="8F">8F</label>
+					</li>
+				</ol>
+			</li>
+			<li class="row row--9">
+				<ol class="seats" type="A">
+					<li class="seat-old">
+						<input type="checkbox" id="9A" />
+						<label for="9A">9A</label>
+					</li>
+					<li class="seat-old">
+						<input type="checkbox" id="9B" />
+						<label for="9B">9B</label>
+					</li>
+					<li class="seat-old">
+						<input type="checkbox" id="9C" />
+						<label for="9C">9C</label>
+					</li>
+					<li class="seat-old">
+						<input type="checkbox" id="9D" />
+						<label for="9D">9D</label>
+					</li>
+					<li class="seat-old">
+						<input type="checkbox" id="9E" />
+						<label for="9E">9E</label>
+					</li>
+					<li class="seat-old">
+						<input type="checkbox" id="9F" />
+						<label for="9F">9F</label>
+					</li>
+				</ol>
+			</li>
+			<li class="row row--10">
+				<ol class="seats" type="A">
+					<li class="seat-old">
+						<input type="checkbox" id="10A" />
+						<label for="10A">10A</label>
+					</li>
+					<li class="seat-old">
+						<input type="checkbox" id="10B" />
+						<label for="10B">10B</label>
+					</li>
+					<li class="seat-old">
+						<input type="checkbox" id="10C" />
+						<label for="10C">10C</label>
+					</li>
+					<li class="seat-old">
+						<input type="checkbox" id="10D" />
+						<label for="10D">10D</label>
+					</li>
+					<li class="seat-old">
+						<input type="checkbox" id="10E" />
+						<label for="10E">10E</label>
+					</li>
+					<li class="seat-old">
+						<input type="checkbox" id="10F" />
+						<label for="10F">10F</label>
+					</li>
+				</ol>
+			</li>
+		</ol>
+	</div> -->
+</body>
+
+</html>
